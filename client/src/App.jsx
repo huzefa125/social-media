@@ -5,13 +5,15 @@ import Messages from './pages/Messages'
 import Discover from './pages/Discover'
 import Profile from './pages/Profile'
 import CreatePost from './pages/CreatePost'
-import ChatBox from './pages/ChatBox' // ✅ import this
-
+import ChatBox from './pages/ChatBox'
+import {useUser} from '@clerk/clerk-react'
+import Layout from './pages/Layout'
 function App() {
+  const {user} = useUser()
   return (
     <>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={!user ? <Login /> : <Layout/>} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/messages/:userId" element={<ChatBox />} /> 
