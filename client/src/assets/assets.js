@@ -105,7 +105,7 @@ export const dummyStoriesData = [
         "media_url": "",
         "media_type": "text",
         "background_color": "#4f46e5",
-        "createdAt": "2025-07-25T08:16:48.617Z",
+        "createdAt": "2025-08-22T08:16:48.617Z",
         "updatedAt": "2025-07-25T08:16:48.617Z",
     },
     {
@@ -115,7 +115,7 @@ export const dummyStoriesData = [
         "media_url": "",
         "media_type": "text",
         "background_color": "#4f46e5",
-        "createdAt": "2025-07-25T08:13:18.111Z",
+        "createdAt": "2025-07-21T08:13:18.111Z",
         "updatedAt": "2025-07-25T08:13:18.111Z",
     }
 ]
