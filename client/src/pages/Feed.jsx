@@ -2,24 +2,31 @@ import React, { useEffect, useState } from 'react'
 import { dummyPostsData } from '../assets/assets'
 import Loading from '../components/Loading'
 import StoriesBar from '../components/StoriesBar'
+import PostCard from '../PostCard'
+
 const Feed = () => {
-  const  [feeds,setFeeds] = useState([])
-  const [loading,setLoading] = useState(true)
-  const fetchFeeeds = async () => {
+  const [feeds, setFeeds] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  const fetchFeeds = async () => {
     setFeeds(dummyPostsData)
     setLoading(false)
   }
 
-  useEffect(()=>{
-    fetchFeeeds()
-  },[])
+  useEffect(() => {
+    fetchFeeds()
+  }, [])
 
-  return !loading ?  (
+  return !loading ? (
     <div className='h-full overflow-y-scroll no-scrollbar py-10 xl:pr-5 flex items-start justify-center xl:gap-8'>
-      {/* SToreies and post list */}
+      {/* Stories and post list */}
       <div>
         <StoriesBar />
-        <div className='p-4 space-y-6'>List of post</div>
+        <div className='p-4 space-y-6'>
+          {feeds.map((post) => (
+            <PostCard key={post._id} post={post} />
+          ))}
+        </div>
       </div>
 
       <div>
@@ -29,7 +36,9 @@ const Feed = () => {
         <h1>Recent messages</h1>
       </div>
     </div>
-  ) : <Loading/>
+  ) : (
+    <Loading />
+  )
 }
 
 export default Feed
