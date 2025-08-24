@@ -16,7 +16,7 @@ function App() {
     <Toaster />
 
       <Routes>
-       <Route path="/" element={!user ? <Login /> : <Layout />}>
+  <Route path="/" element={!user ? <Login /> : <Layout />}>
   <Route index element={<Feed />} />   {/* default child */}
   <Route path="feed" element={<Feed />} />
   <Route path="messages" element={<Messages />} />
@@ -26,7 +26,6 @@ function App() {
   <Route path="profile/:profileId" element={<Profile />} />
   <Route path="create-post" element={<CreatePost />} />
 </Route>
-
       </Routes>
    
 
